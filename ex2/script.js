@@ -5,7 +5,7 @@ const select = document.querySelector('select')
 const divCategory = document.getElementById('category')
 const divRandom = document.getElementById('random')
 /**local storage */
-const data = JSON.parse(localStorage.getItem("ulValue"))
+const data = JSON.parse(localStorage.getItem("divValue"))
 if (data != null) {
 	for (let i = 0; i < data.length; i++) {
 		const div = document.createElement("div")
@@ -60,10 +60,10 @@ save.onclick = () => {
 		let elem = div.textContent
 		data.push(elem)
 	}
-	localStorage.setItem("ulValue", JSON.stringify(data))
+	localStorage.setItem("divValue", JSON.stringify(data))
 }
 
 buttonRemove.onclick = () => {
-	localStorage.removeItem("ulValue")
+	localStorage.removeItem("divValue")
 	location.reload()
 }
